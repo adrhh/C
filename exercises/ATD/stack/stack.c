@@ -22,8 +22,6 @@ struct wezel *pop(struct wezel *head, Dane *d);
 void display(struct wezel *head);
 Dane utworzdane(char *c, int x);
 
-
-
 int main(void)
 {
     struct wezel *glowa;
@@ -38,10 +36,7 @@ int main(void)
          dd.liczba++;
     }
 
-
-
     display(glowa);
-
 
     return 0;
 }
@@ -93,4 +88,3 @@ struct wezel *pop(struct wezel *head, Dane *d)
 
     return head;
 };
-
