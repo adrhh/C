@@ -30,6 +30,7 @@ int main(void)
     printf("\nq - wyjsc\n");
     fflush(stdin);
     z=getchar();
+        
     switch(z)
         {
         case 'd':
@@ -59,7 +60,6 @@ int main(void)
             else
                 printf("Nie ma takiego elementu o kluczu %d\n", liczba);
             break;
-
         case 'w': lista_wyswietl(head);
             break;
         case 'q': return 0;
@@ -104,18 +104,13 @@ struct element *usun(struct element *head, struct element *x)
         head=x->next;
     if(x->next!=NULL)
         x->next->prev = x->prev;
-
     free(x);
-
     return head;
 };
 
 struct element *odwroc(struct element *head)
 {
     struct element *nowa = NULL, *y, *x=head;
-
-
-
     while(x!=NULL)
     {
         y=(struct element *)malloc(sizeof(struct element));
@@ -123,6 +118,5 @@ struct element *odwroc(struct element *head)
         nowa=lista_dodaj(nowa, y);
         x=x->next;
     }
-
     return nowa;
 };
