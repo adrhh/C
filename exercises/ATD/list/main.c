@@ -73,6 +73,3 @@ char * wczytaj(char *z, int ile)
     }
     return wynik;
 }
-
-
-
