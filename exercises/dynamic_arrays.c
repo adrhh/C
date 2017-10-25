@@ -57,7 +57,6 @@ int main(void)
             }
         case 'c':
             {
-                // jak sprawdzi czy jest ?
                 tablica_testowa=(int *)malloc(sizeof(int)*rozmiar_tablicy);
                 zamien_na_losowe(tablica_testowa, rozmiar_tablicy);
                 puts("Podana tablica:");
