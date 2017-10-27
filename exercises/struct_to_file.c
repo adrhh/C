@@ -85,9 +85,8 @@ void dodaj(char* nazwa) {
 	int i;
 	Student s;
 	FILE *plik = fopen(nazwa, "a+b");
-	if (plik == NULL) {
+	if (plik == NULL) 
 		printf("Nie udalo sie otworzyc pliku"); exit(0);
-	}
 
 	printf("Podaj nazwisko: \t");
 	scanf("%29s",s.nazwisko);
@@ -129,7 +128,8 @@ void drukuj(struct student s)
 	printf("\nDane:\n\tImie:\t\t %s"
 		"\n\tNazwisko:\t %s \n\tNumer:\t\t %d \n\tOceny: ",s.imie,s.nazwisko,s.numer);
 
-	for (i = 0; i < 5; i++) printf("\n\t\t[%d]%.2lf",i, s.oceny[i]);
+	for (i = 0; i < 5; i++) 
+		printf("\n\t\t[%d]%.2lf",i, s.oceny[i]);
 	printf("\n\tSrednia: \t%0.2lf", s.srednia);
 }
 void wydruk(char* nazwa) 
@@ -188,7 +188,8 @@ double minimum(char* nazwa)
 	return minSrednia;
 }
 
-int usun(char* nazwa) { //zwarca ile usunieto
+int usun(char* nazwa) //zwarca ile usunieto
+{ 
 	int deletedStudents=0;
 	Student s;
 	double minSrednia = minimum("plik.txt");
@@ -225,9 +226,11 @@ void popraw(char* nazwa)
 	printf("Nazwisko: \t");
 	scanf(" %s", &nazwisko);
 
-	while (fread(&s, sizeof(Student), 1, plik)) {
+	while (fread(&s, sizeof(Student), 1, plik))
+	{
 		index++;
-		if (!strcmp(s.imie, imie) && !strcmp(s.nazwisko, nazwisko)) {
+		if (!strcmp(s.imie, imie) && !strcmp(s.nazwisko, nazwisko))
+		{
 			znaleziono = 1;
 			fseek(plik, index * sizeof(Student), SEEK_SET);
 
