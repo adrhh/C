@@ -157,14 +157,14 @@ void zamien(int *t, int a, int b)
 void perm(int *t, int n, int i)
 {
 	if (i==n)
-    {
+    	{
 		for(int j=0;j<n;j++)
-            printf("%d ", t[j]);
+            		printf("%d ", t[j]);
 		putchar('\n');
 	}
 	else
 		for(int j=i;j<n;j++)
-        {
+        	{
 			zamien(t, i, j);
 			perm(t, n, i+1);
 			zamien(t, i, j);
